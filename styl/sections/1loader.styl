@@ -1,0 +1,79 @@
+loaderdarkblue = lighten(cdarkblue, 25%);
+loaderlightblue = lighten(clightblue, 50%);
+
+.loader
+  min-height 100 vh
+  min-width: 100 vw
+  display flex
+  justify-content: center
+  align-items: center
+  position absolute
+  top 0
+  left 0
+  background #fff
+  &-bg
+    position absolute
+    height 100%
+    width 100%
+    opacity 0.02
+    background cblue
+    &::before
+      position: absolute
+      content ''
+      top 0
+      bottom 0
+      left 0 
+      right 0
+      background: #fff
+      animation: load infinite 3s
+  &-battery
+    z-index 100
+    width 10rem
+    height 2rem
+    border 2px solid cblack
+    border-radius: .3rem
+    position relative
+    transform translateX(-.15rem)
+    background: -moz-linear-gradient(left, loaderdarkblue 0%, loaderlightblue 70%);
+    background: -webkit-linear-gradient(left, loaderdarkblue 0%, loaderlightblue 70%);
+    background: linear-gradient(to right, loaderdarkblue 0%, loaderlightblue 70%)
+    &::after
+      position: absolute
+      content ''
+      right 0
+      width .3rem
+      border cblack 2px solid
+      top .3rem
+      bottom .3rem
+      transform translateX(100%)
+      border-top-right-radius: .3rem
+      border-bottom-right-radius: .3rem
+      animation loaded infinite 3s
+    &::before
+      position: absolute
+      content ''
+      top 0
+      bottom 0
+      left 0 
+      right 0
+      background: #fff
+      animation: load infinite 3s
+
+
+@keyframes load {
+  0% {
+    left: 0;
+  }
+  75%, 100% {
+    left: 100%;
+  }
+}
+
+@keyframes loaded {
+  0%, 74% {
+    background: #fff;
+    }
+  75%, 100% {
+    background: loaderlightblue;
+    }
+}
