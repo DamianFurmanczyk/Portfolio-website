@@ -1,3 +1,6 @@
-import "./_1IIFE&loader";
-let name = "Lorem";
-console.log(name);
+((w) => {
+
+    require("./_loader")
+    require("./hero")
+
+})(window);

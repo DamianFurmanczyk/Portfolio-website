@@ -1,0 +1,64 @@
+.header
+    margin-bottom 100vh
+    .container
+        margin-left 40%
+        
+    display flex
+    align-items: center
+    min-height 70vh
+    background: url("../img/keyboard.jpg") fixed no-repeat center left;
+    background-size: cover;
+    position relative
+    &::after
+        background: transparentify(cblack, .5);
+        fullsize()
+
+    &-title
+        &:first-letter
+            font-size 3rem
+        h(2rem)
+        span
+            font-size 2.2rem
+            color cyellow
+    &-desc
+        font-size 1.4rem
+    
+    &-content
+        pointer-events: none
+        margin-top -5rem
+        color #fff
+        position relative
+        z-index 10
+        padding 2rem
+        text-align: center
+        line-height 2
+        border-radius: .2rem
+    
+    &-btn
+        &-wrapper
+            margin 0 auto
+            display table
+            margin-top 2rem
+        pointer-events: all
+        padding 1.25rem .80rem
+        text-transform: uppercase
+        font-size 1.2rem
+        line-height: 1
+        font-weight: 500
+        font-family: mainF
+        cursor pointer
+        border 3px solid darken(cyellow, 10%)
+        transition: .25s ease
+        &_contact
+            color #ffffff
+            margin-left 1rem
+            background: darken(cyellow, 10%)
+            &:hover
+                background: darken(cyellow, 20%)
+        &_work
+            color darken(cyellow, 10%)
+            background cgray
+            &:hover
+                color cyellow
+               
+

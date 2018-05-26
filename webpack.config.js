@@ -84,7 +84,7 @@ module.exports = {
             js
         ]
     },
-    plugins: [new htmlwebpackplugin({template: './pug/index.pug', title: 'Webpack 4 boilerplate'})],
+    plugins: [new htmlwebpackplugin({template: './pug/layout.pug', title: 'Webpack 4 boilerplate'})],
     entry: {
         main: "./src"
         // relative to where webpack is run from - path on cmd, possibility to merge

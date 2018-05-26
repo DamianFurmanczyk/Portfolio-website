@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+// typography
+mainF = 'Montserrat'
+secF = 'Exo'
 
 // breakpoints
 s = 576px
@@ -10,7 +12,23 @@ xl = 1200 px
 
 cblue = #2098D1
 clightblue = #40A6D7
-cdarkblue = #045F8C
+cdarkblue = darken(cblue, 5%)
 cblack = #1B1B1B
-cgray = #F9F9F9
+cwhitish = #F9F9F9
 cdarkgray = #222222
+cgray = lighten(cdarkgray, 20%)
+cyellow = darken(#FEEE29, 15%)
+
+h() 
+    font-size arguments || 2.5rem
+    font-weight 500
+    text-align: center
+    text-transform: uppercase
+
+fullsize()
+    content: ''
+    left 0
+    top 0
+    bottom 0
+    right 0
+    position arguments || absolute
