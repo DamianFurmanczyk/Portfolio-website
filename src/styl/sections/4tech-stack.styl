@@ -1,0 +1,125 @@
+.tech-stack
+    margin-bottom 100vh
+    &-heading 
+        margin-bottom 6.3rem
+    &-row
+        display flex
+        justify-content space-around
+        margin 3rem 0
+    &-item
+        cursor crosshair
+        opacity 1
+        font-size 8rem
+        transition .45s ease-in
+
+        &-i-main
+            margin: 1rem auto
+            display block
+
+        &-i-info
+            position absolute
+            font-size 1.2rem
+            right 8px
+            top 12px
+            display block
+            opacity .65
+
+        &.hovered
+            transform: scale(1.1)
+            position relative
+            z-index 150
+            box-shadow: 0 0 3px -1px cdarkgray
+            border-radius .5rem
+            .tech-stack-item-i-info
+                opacity .8
+            .tech-item-box.active
+                display block
+                transition .4s ease-in
+            .tech-item-box.active.trans
+                opacity 1
+
+        &.filter
+            opacity .45
+
+        &.unseen
+            transform: rotateY(120deg)
+            backface-visibility hidden
+            opacity 0
+
+        &-content
+            position relative
+            padding 20px 30px
+            display flex
+            justify-content: center
+            align-items center
+            flex-direction: column
+            background #fff
+
+            &-heading
+                h(1rem)
+                color cgray
+                margin .35rem 0 1.2rem 0
+
+.tech-item-box
+    position absolute
+    left calc(100% + 10px)
+    top 50%
+    transform: translate(22px, -50%)
+    z-index 1200
+    font-size 1rem
+    opacity 0
+    display none
+
+    &-dl
+        position relative
+        text-align: center
+        padding 5px 10px
+
+        &::after
+            position absolute
+            left 0
+            top 50%
+            transform translate(-24px, -50%)
+            content ''
+            border 12px solid transparent
+            border-right 9px solid clightblue
+            width 3px
+            height 3px
+        
+        &::before
+            border-left 3px solid clightblue
+            content: ''
+            position absolute
+            top 12%
+            bottom 12%
+            left -4px
+
+        &-dd:not(last)
+            margin-bottom .3rem
+
+.tech-stack-item:last-of-type
+    .tech-item-box
+        left -85%
+        top 50%
+        transform: translate(22px, -50%)
+
+        &-dl
+            &::after
+                position absolute
+                left 100%
+                top 50%
+                transform translate(2px, -50%)
+                content ''
+                border 12px solid transparent
+                border-left 9px solid clightblue
+                width 3px
+                height 3px
+
+            &::before
+                border-right 3px solid clightblue
+                border-left-width: 0px
+                content: ''
+                position absolute
+                top 12%
+                bottom 12%
+                right -4px

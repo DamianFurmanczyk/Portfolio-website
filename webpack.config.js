@@ -73,6 +73,16 @@ const js = {
     exclude: /node_modules/
 };
 
+const url = {
+    test: /\.(ttf|eot|woff|woff2)$/,
+    use: {
+        loader: "file-loader",
+        options: {
+            name: "fonts/[name].[ext]"
+        }
+    }
+}
+
 module.exports = {
     module: {
         rules: [
@@ -81,7 +91,8 @@ module.exports = {
             html,
             pug,
             files,
-            js
+            js,
+            url
         ]
     },
     plugins: [new htmlwebpackplugin({template: './pug/layout.pug', title: 'Webpack 4 boilerplate'})],

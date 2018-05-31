@@ -1,18 +1,21 @@
 .nav
-    background: linear-gradient(to bottom, darken(cwhitish, 4%), cwhitish);
+    box-shadow: 2px 0 2px transparentify(clightblue, .8)
+    position relative
+    z-index 200
 
     &-container
-        padding 2rem 1.7rem 2rem .9rem
+        padding 1rem 1.7rem 1rem .9rem
         display flex
         justify-content: space-between
         align-items: center
-        max-width 1400px
+        max-width 1200px
+        width 80%
 
     &-logo
         font-family mainF
         box-shadow: 0 0 2px -1px cdarkgray
         font-weight: 500
-        padding 2.2rem
+        padding 1.7rem
         background:  transparentify(cyellow, .8) !important
         position relative
         cursor pointer
@@ -21,7 +24,7 @@
             position absolute
             bottom 0
             left 0
-            font-size 2.3rem
+            font-size 2rem
             line-height 1
             margin 0
             color cdarkgray
@@ -29,7 +32,7 @@
     &-ul
         display flex
         &:hover a
-            opacity 0.7
+            opacity 0.6
     
     &-li
         padding 0 1.5rem
@@ -37,8 +40,8 @@
             opacity 1
 
     &-link
-        transition .25s ease-in-out
+        transition .35s ease-in-out
         font-weight: 500
-        font-size 1.3rem
+        font-size 1rem
         color cblue
         text-decoration: none

@@ -2,6 +2,27 @@
     max-width xl
     margin 0 auto
 
+section
+    padding 10rem 0
+
+.section-name
+    h(2.4rem)
+    color cgray
+    &.open .section-name-span::after
+        width 95%
+    &-span
+        position relative
+        &::after
+            width 0
+            content ''
+            display block
+            position absolute
+            left 50%
+            transform: translateX(-50%)
+            margin 1rem 0
+            transition 1s ease
+            height .3rem
+            background clightblue
 
 h1, h2, h3, h4
     font-family: 'Montserrat'
