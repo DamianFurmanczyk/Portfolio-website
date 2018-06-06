@@ -1,0 +1,123 @@
+fontS = 1.2rem;
+
+.footer
+    background url('img/what-the-hex.png') repeat;
+    position fixed
+    bottom 0
+    z-index 10
+    width 100%
+    padding-bottom 8rem
+    padding-top 10rem
+
+    .footer-contact-form
+        display flex
+        justify-content: space-between
+        width 100%
+
+        &-right-side
+            display flex
+            flex-direction: column
+            flex 1 1 auto
+            margin-left 3 rem
+
+            .input-box
+                display flex
+                flex-direction: column
+                flex-flow: column-reverse
+
+            textarea
+                width 22rem
+                padding 1rem
+                font-size 1.1rem
+                width 100%
+
+            input
+                cursor pointer
+                width auto
+                padding .7rem 2rem
+                display inline-block
+                margin-left auto
+                font-size .9rem
+                line-height 1.1 rem
+                margin-right .3rem
+                background cblueishgray
+                color cblue
+                border .3rem cblueishgray solid
+                margin-top 1rem
+                transition .3s ease
+                &:hover
+                    background: lighten(cblueishgray, 15%)
+                    color lighten(cblue, 15%)
+
+            label
+                padding 14px
+                text-align: center
+                font-size fontS
+                background: cblueishgray
+                color darken(cblue, 5%)
+
+        &-left-side
+            display flex
+            flex 1 1 auto
+            flex-direction: column
+            height 13rem
+            width 12rem
+
+            .input-box
+                flex-grow 1
+                width 100%
+                display flex
+                align-items: center
+                flex-flow: row-reverse
+
+                label::after
+                    position absolute
+                    background cblueishgray
+                    top 0
+                    left 0
+                    bottom 0
+                    right 0
+                    content ''
+                    transition .3s ease
+                
+                label span
+                    position relative
+                    z-index 10
+                
+                input:focus + label::after
+                    transform translateX(100%)
+
+                input:focus + label
+                    color cdarkgray
+
+                label
+                    padding 10px
+                    overflow hidden
+                    color darken(cblue, 5%)
+                    box-shadow -1px 0 5px -2px cgray
+
+                input
+                    padding 13.5px 5px
+                    box-shadow 1px 0 5px -2px cgray
+                    color cdarkgray
+                    font-size 1rem !important
+                    line-height 1.1 rem !important
+
+                input:focus
+                    color darken(cblue, 5%)
+                    background cblueishgray
+                    outline-width 0
+
+                input, label
+                    border-width 0
+                    background #fff
+                    font-size fontS
+                    box-sizing: border-box;
+                    transition .3s ease
+                    position relative
+                    text-align center
+                    height 80%
+                    flex 1 0 60%
+
+    .container
+        max-width 700px
