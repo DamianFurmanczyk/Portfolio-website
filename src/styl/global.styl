@@ -10,10 +10,12 @@ main
     z-index 20
     background #fff
     border-bottom .3rem solid cblueishgray
+    box-shadow 0 10px 35px -4px cgray
 
 .section-name
     h(2.4rem)
-    color cgray
+    color cblueishgray
+    margin-bottom 2.6rem
     &.open .section-name-span::after
         width 95%
     &-span
@@ -28,7 +30,7 @@ main
             margin 1rem 0
             transition 1s ease
             height .3rem
-            background clightblue
+            background lighten(clightblue, 30%)
 
 h1, h2, h3, h4
     font-family: 'Montserrat'

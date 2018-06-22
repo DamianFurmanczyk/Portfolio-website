@@ -5,7 +5,8 @@ console.log('hej')
 const $techStack = $('.tech-stack'),
     $tech_rows = $techStack.find('.tech-stack-row'),
     $techStack_cards = $techStack.find('.tech-stack-item'),
-    $w_h = $(window).height();
+    $w_h = $(window).height(),
+    $showcase_tiles = $('.project-tile');
 
 const t = document.querySelectorAll('.tech-stack-item-content'),
     headings = document.querySelectorAll('.section-name');
@@ -69,10 +70,22 @@ $(window).on('scroll', () => {
             sectionTop = $h
                 .offset()
                 .top;
-        sectionTop - $w_h / 1.3 < $top && !$h.hasClass('open') && $h.addClass('open');
+
+        sectionTop - window.outerHeight / 1.5 < $top && !$h.hasClass('open') && $h.addClass('open');
     });
 
     $techStack_cards.each((i, item) => {
+        $showcase_tiles.each((i, item) => {
+            const $item = $(item),
+
+                trigger = (item) => {
+                    item.addClass('active');
+                };
+
+            $item
+                .offset()
+                .top - window.outerHeight / 2 < $top && trigger($item);
+        });
 
         const $item = $(item),
             time = i % 4,
@@ -85,6 +98,6 @@ $(window).on('scroll', () => {
 
         $item
             .offset()
-            .top - $w_h / 1.2 < $top && trigger(time, $item);
+            .top - window.outerHeight / 1.5 < $top && trigger(time, $item);
     });
 });

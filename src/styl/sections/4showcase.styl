@@ -1,0 +1,99 @@
+cred = #C4473A;
+ccwhitish = lighten(cblueishgray, 97%);
+
+.showcase
+    background ccwhitish
+
+    .container
+        padding 0 10px
+
+    .projects-wrapper
+        max-width 1100px
+        margin 4rem auto
+        margin-top 6rem
+        box-shadow 0 0 5px -1px cblueishgray
+        &::after
+            display block
+            clear both
+            content ''
+
+        &:hover .project-tile
+            opacity .7
+
+        .project-tile_react-yt-search
+            background-image:  url('./img/yt-search.jpg')
+        .project-tile_nodejs-blogspot
+            background-image:  url('./img/nodejs-blogspot.jpg')
+        .project-tile_chall
+            background-image:  url('./img/chall.jpg')
+        .project-tile_calc
+            background-image:  url('./img/calc.jpg')
+
+        .project-tile
+            padding-top 40%
+            width 50%
+            border solid ccwhitish 5px
+            float left
+            background-position: center center
+            background-repeat: no-repeat;
+            background-size cover
+            position relative
+            transition .4s
+            cursor pointer
+            overflow hidden
+            opacity 0.95
+
+            &:hover
+                opacity 1
+                box-shadow 1px 1px 5px cblueishgray
+
+            &.active .project-tile-desc
+                transform none
+                opacity 1
+
+            &-heading
+                z-index 1
+                position absolute
+                top 0
+                width 100%
+                font-size 1.2rem
+                color #fff
+                padding 1rem
+                background: transparentify(cblueishgray, 0.7)
+                text-align right
+            
+            &-desc
+                bottom 0
+                position absolute
+                line-height 1.8
+                width 100%
+                padding 2rem
+                color #fff
+                background: transparentify(cblueishgray, 0.7)
+                transform translateY(10%)
+                opacity 0
+                transition .6s
+
+                &-links-wrapper
+                    margin 0 auto
+                    margin-top 1rem
+                    display table
+
+                    a
+                        padding 4px auto
+                        width 90px
+                        color ccwhitish
+                        text-align: center
+                        display inline-block
+                        border 4px solid darken(cyellow, 5%)
+                        text-shadow: 0 0 3px black
+                        background: darken(cyellow, 15%)
+                        margin 0 4px
+                        transition .3s
+                        font-size 1.2rem
+                        text-decoration: none
+                        will-change: text-shadow
+
+                        &:hover
+                            text-shadow: 0 2px 3px black
+                            

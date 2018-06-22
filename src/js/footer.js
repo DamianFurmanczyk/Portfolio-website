@@ -15,17 +15,5 @@ function footerForm_submit(e) {
 
     const data = $(this).serialize();
 
-    const status = $.ajax({
-        url: 'http://localhost:4200/email',
-        type: 'POST',
-        data,
-        complete: (xhr, statusText) => {
-            console.log(arguments),
-            console.log(xhr)
-            console.log('xhr.status: ', xhr.status)
-            console.log(statusText)
-        }
-    }).always(() => {
-        alert('hurra');
-    });
+    const status = $.ajax({url: 'https://blogspot-node.herokuapp.com/email', type: 'POST', data});
 }
