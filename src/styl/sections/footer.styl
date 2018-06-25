@@ -1,13 +1,18 @@
 fontS = 1.2rem;
 
 .footer
-    background url('img/what-the-hex.png') repeat;
-    position fixed
+    
+    &_sticky
+        background url('img/what-the-hex.png') repeat;
+        position fixed
+        bottom 0
+
+    position relative
     bottom 0
     z-index 10
     width 100%
-    padding-bottom 8rem
-    padding-top 10rem
+    padding-bottom 6rem
+    padding-top 7rem
 
     .footer-contact-form
         display flex
@@ -30,6 +35,7 @@ fontS = 1.2rem;
                 padding 1rem
                 font-size 1.1rem
                 width 100%
+                resize: none;
 
             input
                 cursor pointer
@@ -46,8 +52,8 @@ fontS = 1.2rem;
                 margin-top 1rem
                 transition .3s ease
                 &:hover
-                    background: lighten(cblueishgray, 15%)
-                    color darken(cyellow, 15%)
+                    background: lighten(cblueishgray, 5%)
+                    color darken(cyellow, 5%)
 
             label
                 padding 14px

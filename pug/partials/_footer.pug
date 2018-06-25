@@ -11,7 +11,7 @@ section.footer#footer
           label(for='email')
             span Email
         .input-box
-          input(name='company' id='company' type='text' required)
+          input(name='company' id='company' type='text' placeholder='(not required)')
           label(for='company')
             span Company
       .footer-contact-form-right-side
@@ -20,3 +20,26 @@ section.footer#footer
             textarea(cols="30", rows="10" name='message' id='message' required)
             label(for='message')
                 span Message
+
+  section.footer.footer_sticky
+    .container
+      form.footer-contact-form
+        .footer-contact-form-left-side
+          .input-box
+            input(name='name' id='name' type='name' required)
+            label(for='name')
+              span Name
+          .input-box
+            input(name='email' id='email' type='email' required)
+            label(for='email')
+              span Email
+          .input-box
+            input(name='company' id='company' type='text' placeholder='(not required)')
+            label(for='company')
+              span Company
+        .footer-contact-form-right-side
+          .input-box
+              input(type='submit' value='Send')
+              textarea(cols="30", rows="10" name='message' id='message' required)
+              label(for='message')
+                  span Message

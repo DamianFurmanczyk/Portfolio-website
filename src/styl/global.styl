@@ -2,10 +2,20 @@
     max-width xl
     margin 0 auto
 
+.nav-spy
+    background transparentify(clightblue, .5)
+    pointer-events: none
+    transition .3s
+    position fixed
+
+::selection
+    background clightblue
+
 section
     padding 6rem 0
 
 main
+    padding-top 100px
     position relative
     z-index 20
     background #fff
@@ -17,7 +27,7 @@ main
     color cblueishgray
     margin-bottom 2.6rem
     &.open .section-name-span::after
-        width 95%
+        width 100%
     &-span
         position relative
         &::after
@@ -30,7 +40,7 @@ main
             margin 1rem 0
             transition 1s ease
             height .3rem
-            background lighten(clightblue, 30%)
+            background clightblue
 
 h1, h2, h3, h4
     font-family: 'Montserrat'

@@ -93,7 +93,7 @@ $(window).on('scroll', () => {
             trigger = (time, item) => {
                 setTimeout(() => {
                     item.removeClass('unseen');
-                }, time * 450);
+                }, time * 450 + 200);
             };
 
         $item
