@@ -1,7 +1,8 @@
 import $ from 'jquery';
 
 const $a_lis = $('#nav').find('li'),
-    nav_bg = $('.nav-spy');
+    nav_bg = $('.nav-spy'),
+    nav_ul_box = $('#nav-ul-box');
 
 let current$a = $a_lis.eq(0),
     navigatingFlag = false;
@@ -63,7 +64,8 @@ function switchNavSpy($li, throughScrollingFlag = false) {
 
     const $coords = $li.offset(),
         width = $li.innerWidth(),
-        height = $li.innerHeight();
+        height = $li.innerHeight(),
+        open = nav_ul_box.hasClass('open');
 
     if (throughScrollingFlag) {
         $a_lis
@@ -77,8 +79,17 @@ function switchNavSpy($li, throughScrollingFlag = false) {
 
     nav_bg.css({
         height: height,
-        width: width - 20,
-        left: $coords.left - 10
+        width: open
+            ? width - 80
+            : width - 20,
+        left: open
+            ? $coords.left + 40
+            : $coords.left - 10,
+        top: open
+            ? $li
+                .position()
+                .top + 75
+            : 0
     });
 }
 

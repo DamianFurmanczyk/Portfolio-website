@@ -1,3 +1,6 @@
+body
+    position relative
+
 .nav
     box-shadow: 2px 0 2px transparentify(clightblue, .8)
     z-index 200
@@ -28,8 +31,50 @@
             background: darken(cyellow, 5%) !important
             padding .6rem 1.2rem
 
-    &-ul
+    &-sm-icon 
+        @media screen and (min-width: 992px)
+            display none
+
+    &-ul-box
+        @media screen and (max-width: 991px)
+            display none
+            position absolute
+            top 75px
+            left 0
+            right 0
+            height calc(100vh - 75px)
+        &.open
+            display block
+            background darken(cwhitish, 2%)
+
+            & #nav-ul
+                display flex !important
+                flex-direction column
+                align-items: center
+                justify-content: center
+                height 100%
+                width 100%
+
+            & .nav-spy
+                display block !important
+                width 100vw
+            
+    #nav-ul
         display flex
+        @media screen and (max-width: 991px)
+            li
+                flex 0 0 100px
+                position relative
+                width 100%
+                a
+                    width 100%
+                    text-align center
+                
+    .nav-spy
+        background transparentify(clightblue, .5)
+        pointer-events: none
+        transition .3s
+        position fixed
     
     &-li
         padding 0 20px
